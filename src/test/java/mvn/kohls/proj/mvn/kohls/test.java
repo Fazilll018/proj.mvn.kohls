@@ -22,20 +22,14 @@ System.setProperty("webdriver.chrome.driver", "C:\\Users\\fazil\\eclipse-workspa
 		WebDriver driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://www.kohls.com/product/prd-923076/urban-pipeline-heather-tee-men.jsp?color=Zinfandel&prdPV=1");
-		String value = driver.findElement(By.xpath("//h1[@class='pdp-product-title']")).getText();
-
-		System.out.println(value);
-		File loc=new File("C:\\Users\\fazil\\eclipse-workspace\\proj.mvn.kohls\\Data_Ex\\sample.xlsx");
-		FileOutputStream s=new FileOutputStream(loc);
-		Workbook w=new XSSFWorkbook();
-		Cell Cell = w.createSheet().createRow(1).createCell(0);
-		Cell.setCellValue(value);
-		w.write(s);
+	
+	
 
 		
 		Thread.sleep(5000);
 
-driver.findElement(By.xpath("//*[@id=\"container\"]/div[4]/div[1]/div[2]/div[2]/div[4]/div[1]/div[1]/div[2]/a[2]")).click();
+driver.findElement(By.xpath("//a[@title='M']")).click();
+Thread.sleep(2000);
 driver.findElement(By.xpath("//*[@id=\"addtobagID\"]")).click();
 
 	}
